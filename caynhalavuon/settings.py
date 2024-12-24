@@ -12,10 +12,19 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
+import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='mysql://root:baocute2005,,@127.0.0.1:3306:3306/caynhalavuon'
+        default='mysql://root:baocute2005,,@127.0.0.1:3306/caynhalavuon'
+    )
+}
+
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL')
     )
 }
 
